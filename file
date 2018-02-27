@@ -29,7 +29,16 @@ void initialize(Student& s)
 
 void print(const Student& s);
 {
-
+	std::cout<<s.name;
+	std::cout<<s.Egn;
+	std::cout<<s.fn;
+	int countOfMarks;
+	std::cout<<"Enter count of marks:";
+	std::cin>>countOfMarks;
+	for (int i=0; i<countOfMarks; i++)
+		{
+			std::cout<<s.marks[i];
+		}
 }
 
 
