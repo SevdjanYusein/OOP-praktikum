@@ -1,2 +1,42 @@
 https://github.com/radoslaw152
 
+#include "stdafx.h"
+#include <iostream>
+
+
+const int egnSize=11;
+struct Student
+{
+ char name[20];
+ char Egn[egnSize];
+ int fn;
+ double marks[10];
+};
+
+void initialize(Student& s)
+{
+	std::cin.getline(s.name,20,'\n');
+	std::cin>>s.Egn;
+	std::cin>>s.fn;
+	int countOfMarks;
+	std::cout<<"Enter count of marks:";
+	std::cin>>countOfMarks;
+	for (int i=0; i<countOfMarks; i++)
+		{
+			std::cin>>s.marks[i];
+		}
+}
+
+void print(const Student& s);
+{
+
+}
+
+
+int main()
+{
+	Student arr[10];
+	for (int i=0; i<10; i++)	initialize(arr[i]);
+
+    return 0;
+}
