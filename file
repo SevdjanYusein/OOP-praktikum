@@ -1,5 +1,7 @@
 https://github.com/radoslaw152
 
+// week2_praktikum.cpp : main project file.
+
 #include "stdafx.h"
 #include <iostream>
 
@@ -27,7 +29,7 @@ void initialize(Student& s)
 		}
 }
 
-void print(const Student& s);
+void print(const Student& s)
 {
 	std::cout<<s.name;
 	std::cout<<s.Egn;
@@ -41,6 +43,20 @@ void print(const Student& s);
 		}
 }
 
+void printAverageMarks(Student* students, size_t count)
+{
+	double sum=0;
+	for (int i=0; i<count; i++)
+	{
+		int countOfMarks=0;
+		for (int j=0; j<10; j++)
+		{
+			sum += students[i].marks[j];
+			countOfMarks++;
+		}
+		std::cout<<sum/countOfMarks;
+	}
+}
 
 int main()
 {
