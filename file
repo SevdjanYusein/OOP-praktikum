@@ -1,5 +1,5 @@
-size_t maxNameSize=20;
-size_t maxCountOfProducts=64;
+const size_t maxNameSize=20;
+const size_t maxCountOfProducts=64;
 
 class Product
 {
@@ -10,6 +10,18 @@ private:
 	bool isFood;
 	double price;
 public:
+	Product(char,int,double,bool,double);
+	void setname(char);
+	void setexpiryDate(int);
+	void setfat(double);
+	void setisFood(bool);
+	void setprice(double);
+
+	char* getName() const
+	{
+		return this->name;
+	}
+
 
 };
 
