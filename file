@@ -1,3 +1,29 @@
+size_t maxNameSize=20;
+size_t maxCountOfProducts=64;
+
+class Product
+{
+private:
+	char name[maxNameSize];
+	int expiryDate;
+	double fat;
+	bool isFood;
+	double price;
+public:
+
+};
+
+class Store
+{
+private:
+	int countOfProducts;
+	Product products[maxCountOfProducts];
+	double storeTurnover;
+public:
+
+};
+__________________________________________________________________________________________________
+
 {- Рекурсивни функции върху числа -}
 
 {- Примери -}
