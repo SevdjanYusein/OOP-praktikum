@@ -1,1 +1,1 @@
-# OOP-praktikum
+# OOP
