@@ -1,0 +1,76 @@
+#include <iostream>
+
+template <class T>
+struct DLNode
+{
+	T data;
+	DLNode<T> *next, *previous;
+};
+
+template <class T>
+void append(DLNode<T>*& l1, DLNode<T>* l2)
+{
+	DLNode<T>* crr = l1;
+	while (crr->next != nullptr)
+	{
+		crr = crr->next;
+	}
+	DLNode<T>* node = l2;
+	while (node->next != nullptr)
+	{
+		crr->next = new DLNode<T>(node->data, nullptr, crr);
+		crr = crr->next;
+		node = node->next;
+	}
+}
+
+template <class T>
+DLNode<T>* concat(DLNode<T>* l1, DLNode<T>* l2)
+{
+	DLNode<T>* nl;
+	DLNode<T>* crrNL;
+	DLNode<T>* crr = l1;
+
+	while (crr->next != nullptr)
+	{
+		if (crr->previous == nullptr)
+		{
+			nl = crrNL = new DLNode<T>(crr->data, nullptr, nullptr);
+		}
+		else {
+			crrNL = new DLNode<T>(crr->data, nullptr, crrNL);
+		}
+		crr = crr->next;
+		crrNL = crrNL->next;
+	}
+
+	crr = l2;
+	while (crr->next != nullptr)
+	{
+		crrNL = new DLNode<T>(crr->data, nullptr, crrNL);
+		crr = crr->next;
+		crrNL = crrNL->next;
+	}
+
+	return nl;
+}
+
+template <class T>
+void reverse(DLNode<T>*& l)
+{
+	DLNode<T>* crr = l;
+	DLNode<T>* next = crr->next;
+	while (next->next != nullptr)
+	{
+		DLNode<T>* temp = crr;
+		crr->next = crr->previous;
+		crr->previous = temp->next;
+	}
+
+}
+
+template <class T>
+void removeDuplicates(DLNode<T>*& l)
+{
+      //...
+}
