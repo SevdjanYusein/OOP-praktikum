@@ -67,6 +67,12 @@ void reverse(DLNode<T>*& l)
 		crr->previous = temp->next;
 	}
 
+	crr = next;
+	DLNode<T>* temp = crr;
+	crr->next = crr->previous;
+	crr->previous = temp->next;
+	l = next;
+
 }
 
 template <class T>
